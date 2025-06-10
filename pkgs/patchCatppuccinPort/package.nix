@@ -41,9 +41,8 @@
     replacements;
 in
   pkgs.runCommandLocal "catppuccin-${port}-patched" {src = pristine;} ''
-    cp -r $src $out
+    cp -r --no-preserve=mode,ownership $src/. $out
 
-    # Only touch files that actually contain one of the patterns
     grep -IlR --null ${grepFlags} $out \
       | xargs -0 sed -i -e ${lib.escapeShellArg sedScript}
   ''
