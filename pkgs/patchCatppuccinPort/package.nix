@@ -1,14 +1,14 @@
 {
   lib,
   pkgs,
-  catppuccinPackages,
+  fetchCatppuccinPort,
 }: {
   port,
   rev,
   hash,
   extraSubstitutions ? [],
 }: let
-  pristine = catppuccinPackages.fetchCatppuccinPort {
+  pristine = fetchCatppuccinPort {
     inherit port rev hash;
   };
 
