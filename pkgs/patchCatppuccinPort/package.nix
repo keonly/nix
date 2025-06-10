@@ -33,9 +33,7 @@
     to = builtins.elemAt p 1;
   in "--replace ${lib.escapeShellArg from} ${lib.escapeShellArg to}";
 
-  replaceArgs =
-    lib.concatStringsSep " "
-    (map mkReplaceArg replacementTable);
+  replaceArgs = lib.concatStringsSep " " (map mkReplaceArg replacementTable);
 
   grepFlags =
     lib.concatStringsSep " "
@@ -45,7 +43,8 @@ in
   pkgs.runCommandLocal "catppuccin-${port}-patched" {src = pristine;} ''
     cp -r --no-preserve=mode,ownership --dereference "$src/." "$out"
 
-    grep -IlR --null ${grepFlags} "$out" | while IFS= read -r -d \'\' f; do
-      substituteInPlace "$f" ${replaceArgs}
-    done
+    grep -IlR --null ${grepFlags} "$out" | \
+      while IFS= read -r -d $'\0' f; do
+        substituteInPlace "$f" ${replaceArgs}
+      done
   ''
