@@ -12,18 +12,18 @@
 
   replacementTable =
     [
-      ["#cdd6f4" "#f4f4f4"] # text
-      ["#bac2de" "#e0e0e0"] # subtext1
-      ["#a6adc8" "#c6c6c6"] # subtext0
-      ["#9399b2" "#a8a8a8"] # overlay2
-      ["#7f849c" "#8d8d8d"] # overlay1
-      ["#6c7086" "#6f6f6f"] # overlay0
-      ["#585b70" "#525252"] # surface2
-      ["#45475a" "#393939"] # surface1
-      ["#313244" "#262626"] # surface0
-      ["#1e1e2e" "#161616"] # base
-      ["#181825" "#0b0b0b"] # mantle
-      ["#11111b" "#000000"] # crust
+      ["cdd6f4" "f4f4f4"] # text
+      ["bac2de" "e0e0e0"] # subtext1
+      ["a6adc8" "c6c6c6"] # subtext0
+      ["9399b2" "a8a8a8"] # overlay2
+      ["7f849c" "8d8d8d"] # overlay1
+      ["6c7086" "6f6f6f"] # overlay0
+      ["585b70" "525252"] # surface2
+      ["45475a" "393939"] # surface1
+      ["313244" "262626"] # surface0
+      ["1e1e2e" "161616"] # base
+      ["181825" "0b0b0b"] # mantle
+      ["11111b" "000000"] # crust
     ]
     ++ extraSubstitutions;
 
